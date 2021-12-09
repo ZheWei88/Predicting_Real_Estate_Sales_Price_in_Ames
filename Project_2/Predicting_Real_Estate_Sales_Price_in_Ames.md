@@ -18,6 +18,88 @@ In this study, we will develop a model will help provide a simple to understand 
 Success will be determined by how well the model predicts the sale price of the test data set submitting the predicted sales price to Kaggle at https://www.kaggle.com/c/dsi-us-11-project-2-regression-challenge.
 
 # 2. Data Cleaning and EDA
+## The Data Dictionary
+|Feature|Type|Description|
+|---|---|---|
+|**SalePrice**|*float64*|the property's sale price in dollars.| <br>
+|**MSSubClass**|*Object*|The building class.| <br>
+|**MSZoning**|*Object*|Identifies the general zoning classification of the sale.| <br>
+|**LotFrontage**|*float4*|Linear feet of street connected to property| <br>
+|**LotArea**|*float64*|Lot size in square feet.|  <br>
+|**Street**|*Object*|Type of road access to property.|  <br>
+|**Alley**|*Object*|Type of alley access to property.|  <br>
+|**LotShape**|*Object*|General shape of property|  <br>
+|**LandContour**|*Object*|Flatness of the property|   <br>
+|**Utilities**|*Object*|Type of utilities available|  <br>
+|**LotConfig**|*Object*|Lot configuration|  <br>
+|**LandSlope**|*Object*|Slope of property|  <br>
+|**Neighborhood**|*Object*|Physical locations within Ames city limits|  <br>
+|**Condition1**|*Object*|Proximity to main road or railroad| <br>
+|**Condition2**|*Object*|Proximity to main road or railroad (if a second is present)| <br>
+|**BldgType**|*Object*|Type of dwelling| <br>
+|**HouseStyle**|*Object*|Style of dwelling| <br>
+|**OverallQual**|*int64*|Overall material and finish quality| <br>
+|**OverallCond**|*int64*|Overall condition rating| <br>
+|**YearBuilt**|*int64*|Original construction date| <br>
+|**YearRemodAdd**|*int64*|Remodel date (same as construction date if no remodeling or additions)| <br>
+|**RoofStyle**|*Object*|Type of roof| <br>
+|**RoofMatl**|*Object*|Roof material| <br>
+|**Exterior1st**|*Object*|aExterior covering on house| <br>
+|**Exterior2nd**|*Object*|Exterior covering on house (if more than one material)| <br>
+|**MasVnrType**|*Object*|Masonry veneer type| <br>
+|**MasVnrArea**|*int64*|Masonry veneer area in square feet| <br>
+|**ExterQual**|*Object*|Exterior material quality| <br>
+|**ExterCond**|*Object*|Present condition of the material on the exterior| <br>
+|**Foundation**|*Object*|Type of foundation| <br>
+|**BsmtQual**|*Object*|Height of the basement| <br>
+|**BsmtCond**|*Object*|General condition of the basement| <br>
+|**BsmtExposure**|*Object*|Walkout or garden level basement walls| <br>
+|**BsmtFinType1**|*Object*|Quality of basement finished area| <br>
+|**BsmtFinSF1**|*int64*|Type 1 finished square feet| <br>
+|**BsmtFinType2**|*Object*|Quality of second finished area (if present)| <br>
+|**BsmtFinSF2**|*int64*|Type 2 finished square feet| <br>
+|**BsmtUnfSF**|*int64*|Unfinished square feet of basement area| <br>
+|**TotalBsmtSF**|*int64*|Total square feet of basement area| <br>
+|**Heating**|*Object*|Type of heating| <br>
+|**HeatingQC**|*Object*|Heating quality and condition| <br>
+|**CentralAir**|*Object*|Central air conditioning| <br>
+|**Electrical**|*Object*|Electrical system| <br>
+|**1stFlrSF**|*int64*|First Floor square feet| <br>
+|**2ndFlrSF**|*int64*|Second floor square feet| <br>
+|**LowQualFinSF**|*int64*|Low quality finished square feet (all floors)| <br>
+|**GrLivArea**|*int64*|Above grade (ground) living area square feet| <br>
+|**BsmtFullBath**|*int64*|Basement full bathrooms| <br>
+|**BsmtHalfBath**|*int64*|Basement half bathrooms| <br>
+|**FullBath**|*int64*|Full bathrooms above grade| <br>
+|**HalfBath**|*int64*|Half baths above grade| <br>
+|**Bedroom**|*int64*|Number of bedrooms above basement level| <br>
+|**Kitchen**|*int64*|Number of kitchens| <br>
+|**KitchenQual**|*Object*|Kitchen quality| <br>
+|**TotRmsAbvGrd**|*int64*|Total rooms above grade (does not include bathrooms)| <br>
+|**Functional**|*Object*|Home functionality rating| <br>
+|**Fireplaces**|*int64*|Number of fireplaces| <br>
+|**FireplaceQu**|*Object*|Fireplace quality| <br>
+|**GarageType**|*Object*|Garage location| <br>
+|**GarageYrBlt**|*int64*|Year garage was built| <br>
+|**GarageFinish**|*Object*|Interior finish of the garage| <br>
+|**GarageCars**|*int64int64*|Size of garage in car capacity| <br>
+|**GarageArea**|*int64*|Size of garage in square feet| <br>
+|**GarageQual**|*Object*|Garage quality| <br>
+|**GarageCond**|*Object*|Garage condition| <br>
+|**PavedDrive**|*Object*|Paved driveway| <br>
+|**WoodDeckSF**|*int64*|Wood deck area in square feet| <br>
+|**OpenPorchSF**|*int64*|Open porch area in square feet| <br>
+|**EnclosedPorch**|*int64*|Enclosed porch area in square feet| <br>
+|**3SsnPorch**|*int64*|Three season porch area in square feet| <br>
+|**ScreenPorch**|*int64*|Screen porch area in square feet| <br>
+|**PoolArea**|*int64*|Pool area in square feet| <br>
+|**PoolQC**|*Object*|Quality of pool| <br>
+|**Fence**|*Object*|Fence quality| <br>
+|**MiscFeature**|*Object*|Miscellaneous feature not covered in other categories| <br>
+|**MiscVal**|*int64*|$Value of miscellaneous feature| <br>
+|**MoSold**|*int64*|Month Sold| <br>
+|**YrSold**|*int64*|Year Sold| <br>
+|**SaleType**|*Object*|Type of sale| <br>
 ## Data cleaning is split into:
 ### 2.1 Converting year that the house, additions/remodelling and garage was built, to actual age.
 - Achieved by using: Year Sold - Year Built
@@ -53,6 +135,7 @@ Success will be determined by how well the model predicts the sale price of the 
 - Removing Outliers
   - Numerical Outliers
     - Outliers such as those circled in the figure below are removed
+  <br>
     <img src="./images/numerical_outliers.png" width="500" align="left"/>
 <br>
 
@@ -73,12 +156,16 @@ Success will be determined by how well the model predicts the sale price of the 
 ## Target variable **'y'**
 The target variable will be the Sale Price, and from the figure below, it is right skewed.
 <br>
+
 <img src="./images/sale_price_distribution.png" width="500" align="left"/>
 <br>
+
 We will improve on this by applying a log function to the Sale Price, like so:
 <br>
+
 <img src="./images/log_price_distribution.png" width="500" align="left"/>
 <br>
+
 We can see that curve has become a lot smoother, with mean and median are much closer to the peak of the distribution curve.
 
 ## The Features **'X'**
@@ -119,7 +206,7 @@ We will select LASSO Regression as the model to test the Test Data, and also inv
 
 Based on the residual plot below, we can see that this chosen LASSO model will perform best when having to predict houses within the range of USD 100k to USD 300k, as indicated by the larger cluster of lower RMSE values in that range.
 <br>
-<img src=" ./images/lasso_residual_plot.png" width="500" align="left"/>
+<img src="./images/lasso_residual_plot.png" width="500" align="left"/>
 <br>
 
 
