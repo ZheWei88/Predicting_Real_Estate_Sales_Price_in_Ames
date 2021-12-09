@@ -154,16 +154,12 @@ Success will be determined by how well the model predicts the sale price of the 
 # 3. Preprocessing and Modelling
 ## Target variable **'y'**
 The target variable will be the Sale Price, and from the figure below, it is right skewed.
-<br>
 
-<img src="./images/sale_price_distribution.png" width="500" align="left"/>
-<br>
+<img src="./images/sale_price_distribution.png" width="500" float="center"/><br>
 
 We will improve on this by applying a log function to the Sale Price, like so:
-<br>
 
-<img src="./images/log_price_distribution.png" width="500" align="left"/>
-<br>
+<img src="./images/log_price_distribution.png" width="500" float="center"/><br>
 
 We can see that curve has become a lot smoother, with mean and median are much closer to the peak of the distribution curve.
 
@@ -204,9 +200,7 @@ LASSO is the best as it acts as a feature selector, and shrinks the coefficients
 We will select LASSO Regression as the model to test the Test Data, and also investigate which features are a good predictor of sale price, so that home sellers/buyers and real-estate agents can easily predict the value of a house.
 
 Based on the residual plot below, we can see that this chosen LASSO model will perform best when having to predict houses within the range of USD 100k to USD 300k, as indicated by the larger cluster of lower RMSE values in that range.
-<br>
-<img src="./images/lasso_residual_plot.png" width="500" align="left"/>
-<br>
+<img src="./images/lasso_residual_plot.png" width="500" float="center"/> <br>
 
 
 # 4. Chosen Model Evaluation on Test Data
@@ -222,8 +216,7 @@ The Kaggle score is based on the root-mean-squared-error. The results were:
 
 This puts our model in the top 10 of the leaderboard, of which there were 89 entries. This indicates that that this model is a good predictor of the sale price of houses in Ames!
 
-<img src="./images/private_leaderboard.png" width="500" align="left"/>
-<br>
+<img src="./images/private_leaderboard.png" width="500" float="center"/> <br>
 
 
 # Conclusions and Recommendations
