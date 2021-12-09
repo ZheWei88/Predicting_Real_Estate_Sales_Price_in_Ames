@@ -136,7 +136,7 @@ Success will be determined by how well the model predicts the sale price of the 
   - Numerical Outliers
     - Outliers such as those circled in the figure below are removed
 
-    <img src="./images/numerical_outliers.png" width="500" align="left"/>
+    <img src="./images/numerical_outliers.png" width="500" float="center"/> <br>
 
   - Categorical "Outliers"
     - Drop features in the test set that have values that are not present in the train set, as the model will not be able to predict the sale price of the test set from values that it was never trained on.
