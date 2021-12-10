@@ -7,13 +7,28 @@
 4. Chosen Model Evalutation on Test Data
 5. Conclusions and Reccomendations
 
+## Introduction
+Trying to accurately predict the price of a real estate is tricky business. This can often lead to disagreements between home-buyers, home-sellers and real estate agents, which be distressing for all parties involved.
+
+<img src="./images/argument.png" width="500" float="center"/><br>
+
+**The reason it can be difficult to accurately predict the price of real estate is because there are many features in a house that will affect it's sale price.**
+
+Many people base their predictions of house sale price on an **Inside View**.
+The **Inside View** on a topic involves making predictions based on your understanding of the details of the process which can be easily skewed by personal biases!
+
+What we truly need for this issue of housing sale price predictions is an **Outside View**.
+The **Outside View** involves ignoring these details and using an estimate based on a class of roughly similar previous cases, and is a clearer, more unbiased approach to the problem at hand.
+
+<img src="./images/inside_outside_view.png" width="500" float="center"/><br>
+
 # 1. Problem Statement
 
 There are are many variables that determine how much a home can fetch.
 
 Using the Ames (IA) dataset (train, test), we want to find out which variables matter for home sale prices and produce accurate sale price predictions.
 
-In this study, we will develop a model will help provide a simple to understand starting point, helping to reduce information asymmetry between potential home-buyers, home-sellers and real estate agents.
+In this study, we will develop a model will provide the **Outside View**, helping to reduce information asymmetry between potential home-buyers, home-sellers and real estate agents.
 
 Success will be determined by how well the model predicts the sale price of the test data set submitting the predicted sales price to Kaggle at https://www.kaggle.com/c/dsi-us-11-project-2-regression-challenge.
 
