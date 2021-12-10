@@ -8,7 +8,7 @@
 5. Conclusions and Reccomendations
 
 ## Introduction
-Trying to accurately predict the price of a real estate is tricky business. This can often lead to disagreements between home-buyers, home-sellers and real estate agents, which be distressing for all parties involved.
+Trying to accurately predict the price of a real estate is tricky business. This can often lead to disagreements between home-buyers, home-sellers and real estate agents, which can be distressing for all parties involved.
 
 <img src="./images/argument.png" width="500" float="center"/><br>
 
